@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Character Sheet</title>
+        <style>
+            :root {
+                --sheet-width: 800px;
+                --bg: white;
+                --faded: #ddd;
+                --faded-light: #eee;
+                --faded-dark: #bbb;
+                --radius: 10px;
+                --gutter: 10px;
+                --bubble-size: 10px;
+                --small-box-width: 30px;
+                --large-box-width: 70px;
+            }
+
+            .red {
+                background: red;
+            }
+
+            .blue {
+                background: blue;
+            }
+
+            .hide {
+                display: none !important;
+            }
+
+            textarea {
+                font-size: 12px;
+                text-align: left;
+                width: calc(100% - var(--radius) * 2 - 2px);
+                border-radius: var(--radius);
+                padding: var(--radius);
+                resize: none;
+                overflow: hidden;
+                height: 15em;
+            }
+
+            input[type="checkbox"] {
+                cursor: pointer;
+            }
+
+            div.box {
+                margin-top: var(--gutter);
+            }
+
+            form.charsheet {
+                width: var(--sheet-width);
+                right: 0;
+                left: 0;
+                margin-right: auto;
+                margin-left: auto;
+                margin-top: 10px;
+            }
+
+            form.charsheet div.textblock {
+                display: flex;
+                flex-direction: column-reverse;
+                width: 100%;
+                align-items: center;
+            }
+
+            form.charsheet div.textblock label {
+                text-align: center;
+                border: 1px solid black;
+                border-top: 0;
+                font-size: 10px;
+                width: calc(100% - var(--radius) * 2 - 2px);
+                border-radius: 0 0 var(--radius) var(--radius);
+                padding: 4px 0;
+                font-weight: bold;
+            }
+
+            form.charsheet div.textblock textarea {
+                border: 1px solid black;
+            }
+            form.charsheet main {
+                display: flex;
+                justify-content: space-between;
+                margin-top: var(--gutter) * 2;
+            }
+
+            form.charsheet div.label-container {
+                position: relative;
+                width: 100%;
+                height: var(--small-box-width) - var(--radius) - 2px;
+                margin-top: calc(var(--radius) / 2 + 1px);
+                border: 1px solid black;
+                border-left: 0;
+                text-align: center;
+            }
+
+            form.charsheet div.label-container > label {
+                position: absolute;
+                left: 0;
+                top: 1px;
+                transform: translate(0%, 50%);
+                width: 100%;
+                font-size: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="/submit-character" method="post">
+            <header>
+                <section class="charname">
+                    <label for="charname">Character Name</label>
+                    <input name="charname" placeholder="Thoradin Fireforge" />
+                </section>
+                <section class="misc">
+                    <ul>
+                        <li>
+                            <label for="classlevel">Class & Level</label>
+                            <input name="classlevel" placeholder="Paladin 2" />
+                        </li>
+                        <li>
+                            <label for="background">Background</label>
+                            <input name="background" placeholder="Acolyte" />
+                        </li>
+                        <li>
+                            <label for="playername">Player Name</label>
+                            <input
+                                name="playername"
+                                placeholder="Player McPlayerface"
+                            />
+                        </li>
+                        <li>
+                            <label for="race">Race</label>
+                            <input name="race" placeholder="Half-elf" />
+                        </li>
+                        <li>
+                            <label for="alignment">Alignment</label>
+                            <input name="alignment" placeholder="Lawful Good" />
+                        </li>
+                        <li>
+                            <label for="experiencepoints"
+                                >Experience Points</label
+                            >
+                            <input name="experiencepoints" placeholder="3240" />
+                        </li>
+                    </ul>
+                </section>
+            </header>
+            <main>
+                <section>
+                    <section class="attributes">
+                        <div class="scores">
+                            <ul>
+                                <li>
+                                    <div class="score">
+                                        <label for="Strengthscore"
+                                            >Strength</label
+                                        >
+                                        <input
+                                            name="Strengthscore"
+                                            placeholder="10"
+                                        />
+                                    </div>
+                                    <div class="modifier">
+                                        <input
+                                            name="Strengthmod"
+                                            placeholder="+0"
+                                        />
+                                    </div>
+                                </li>
+                                <!-- Continue for other attributes -->
+                            </ul>
+                        </div>
+                        <div class="attr-applications">
+                            <div class="inspiration box">
+                                <div class="label-container">
+                                    <label for="inspiration">Inspiration</label>
+                                </div>
+                                <input name="inspiration" type="checkbox" />
+                            </div>
+                            <!-- Continue for other attributes -->
+                        </div>
+                    </section>
+                    <div class="passive-perception box">
+                        <div class="label-container">
+                            <label for="passiveperception"
+                                >Passive Wisdom (Perception)</label
+                            >
+                        </div>
+                        <input name="passiveperception" placeholder="10" />
+                    </div>
+                    <div class="otherprofs box textblock">
+                        <label for="otherprofs"
+                            >Other Proficiencies and Languages</label
+                        >
+                        <textarea name="otherprofs"></textarea>
+                    </div>
+                </section>
+                <!-- Continue with other sections for combat, attacks & spellcasting, equipment, flavor, etc. -->
+            </main>
+        </form>
+    </body>
+</html>

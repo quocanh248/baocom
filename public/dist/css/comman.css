@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{    
+    width: 100vw;
+    height: 30vh;
+  
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.header-left{    
+    width: 60%;   
+    left: 0; 
+    border-right: 10px solid #c2670d;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.header-left p{    
+   font-size: 80px;
+   color: blue;
+   
+}
+.number p{    
+    font-size: 85px;
+    color: blue; 
+   
+ }
+.header-right{      
+    width: 40%;
+    right: 0;     
+}  
+.number {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Đưa nội dung lên trên */
+    align-items: center; /* Căn giữa ngang */
+    border-bottom: 2px solid #ccc;
+}
+
+.day {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Hiển thị nội dung trên cùng một hàng */
+    justify-content: space-between; /* Canh cách đều giữa nội dung và nút */
+    align-items: flex-start; /* Căn giữa theo chiều ngang */
+    margin-top: 10px;
+}
+
+.day p {
+    font-size: 22px;
+    color: #3f3c3c;
+    padding: 10px;    
+    min-width: 150px;
+    max-width: 350px;
+}
+.day input {
+    font-size: 22px;
+    color: #3f3c3c;
+    padding: 10px;    
+    min-width: 150px;
+    max-width: 200px;
+    border: none;
+    outline: none;
+}
+
+.btnnew {
+    background-color: rgb(31, 55, 152);
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 3px;
+    outline: none;
+    margin-right: 20px;
+    height: 50px;
+   min-width: 150px;
+   max-width: 150px;
+}
+
+.btnnew:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+.info{
+    width: 100vw;
+    height: 15vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid #ccc;
+}
+.info input{
+    text-align: center;
+    min-height: 60%;
+    max-height: 60%;
+    margin: 0 30px;
+    font-size: 50px;
+    border: none;
+    outline: none;
+}
+.footer{
+    height: 55vh;    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.footer p{
+    font-size: 220px;
+    color: white;
+    background-color: rgb(62, 210, 62);
+}
